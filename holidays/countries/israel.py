@@ -38,17 +38,17 @@ class Israel(HolidayBase):
 
     def _populate(self, year):
         # Passover
-        name = "Passover I"
+        name = "Passover"
         passover_start_dt = date(*passover(year, eve=True))
-        self[passover_start_dt] = name + " - Eve"
+        self[passover_start_dt] = name
         self[passover_start_dt + rd(days=1)] = name
 
         name = "Passover"
         for offset in range(2, 6):
-            self[passover_start_dt + rd(days=offset)] = name + " - Chol HaMoed"
+            self[passover_start_dt + rd(days=offset)] = name
 
-        name = "Passover VII"
-        self[passover_start_dt + rd(days=6)] = name + " - Eve"
+        name = "Passover"
+        self[passover_start_dt + rd(days=6)] = name
         self[passover_start_dt + rd(days=7)] = name
 
         # Memorial Day
@@ -107,17 +107,17 @@ class Israel(HolidayBase):
         self[yom_kippur_dt + rd(days=1)] = name
 
         # Sukkot
-        name = "Sukkot I"
+        name = "Sukkot"
         sukkot_start_dt = date(*sukkot(year, eve=True))
-        self[sukkot_start_dt] = name + " - Eve"
+        self[sukkot_start_dt] = name
         self[sukkot_start_dt + rd(days=1)] = name
 
         name = "Sukkot"
         for offset in range(2, 7):
-            self[sukkot_start_dt + rd(days=offset)] = name + " - Chol HaMoed"
+            self[sukkot_start_dt + rd(days=offset)] = name
 
-        name = "Sukkot VII"
-        self[sukkot_start_dt + rd(days=7)] = name + " - Eve"
+        name = "Sukkot"
+        self[sukkot_start_dt + rd(days=7)] = name
         self[sukkot_start_dt + rd(days=8)] = name
 
         # Hanukkah
