@@ -70,7 +70,7 @@ class Israel(HolidayBase):
 
             if observed_delta != 0:
                 self[memorial_day_dt + rd(days=observed_delta + 1)] = (
-                    name + " (Observed)"
+                    name
                 )
 
         # Independence Day
@@ -79,7 +79,7 @@ class Israel(HolidayBase):
 
         if self.observed and observed_delta != 0:
             self[memorial_day_dt + rd(days=observed_delta + 2)] = (
-                name + " (Observed)"
+                name
             )
 
         # Lag Baomer
@@ -90,20 +90,20 @@ class Israel(HolidayBase):
         # Shavuot
         name = "Shavuot"
         shavuot_dt = date(*shavuot(year, eve=True))
-        self[shavuot_dt] = name + " - Eve"
+        self[shavuot_dt] = name
         self[shavuot_dt + rd(days=1)] = name
 
         # Rosh Hashana
         name = "Rosh Hashanah"
         rosh_hashanah_dt = date(*rosh_hashanah(year, eve=True))
-        self[rosh_hashanah_dt] = name + " - Eve"
+        self[rosh_hashanah_dt] = name
         self[rosh_hashanah_dt + rd(days=1)] = name
         self[rosh_hashanah_dt + rd(days=2)] = name
 
         # Yom Kippur
         name = "Yom Kippur"
         yom_kippur_dt = date(*yom_kippur(year, eve=True))
-        self[yom_kippur_dt] = name + " - Eve"
+        self[yom_kippur_dt] = name
         self[yom_kippur_dt + rd(days=1)] = name
 
         # Sukkot
@@ -137,9 +137,9 @@ class Israel(HolidayBase):
         # Purim
         name = "Purim"
         purim_date = date(*purim(year, eve=True))
-        self[purim_date] = name + " - Eve"
+        self[purim_date] = name
         self[purim_date + rd(days=1)] = name
-        self[purim_date + rd(days=2)] = "Shushan Purim"
+        self[purim_date + rd(days=2)] = name
 
 
 class IL(Israel):
